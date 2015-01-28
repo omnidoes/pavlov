@@ -1,0 +1,16 @@
+name = Pavlov
+description = Beautiful basic theme crafted by <a href="http://omniperforms.com">Omni Strategic Technologies</a>.
+core = 7.x
+engine = phptemplate
+
+screenshot = assets/img/screenshot.png
+
+stylesheets[all][] = assets/css/style.css
+
+scripts[] = assets/js/plugins.js
+scripts[] = assets/js/script.js
+
+regions[header]					= Header
+regions[content]				= Content
+regions[sidebar]  				= Sidebar
+regions[footer]					= Footer

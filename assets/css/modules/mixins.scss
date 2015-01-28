@@ -1,0 +1,83 @@
+
+/* 
+ * Adds 'variation-specific' names in IE 6-8
+ * http://help.typekit.com/customer/portal/articles/6855-using-multiple-weights-and-styles
+ */
+
+@mixin typekit($family, $variation) {
+
+    @if $family == 'tisa' {
+        $family: 'ff-tisa-web-pro';
+    }
+
+    @if $family == 'myriad' {
+        $family: 'myriad-pro';
+    }
+
+
+    /* Light */
+
+    @if $variation == 'light' {
+        font-family: '#{$family}-n3', $family;
+        font-weight: 300;
+    }
+
+    @if $variation == 'light-italic' {
+        font-family: '#{$family}-i3', $family;
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    /* Regular */
+
+    @if $variation == 'regular' {
+        font-family: '#{$family}-n4', $family;
+        font-weight: 400;
+    }
+
+    @if $variation == 'italic' {
+        font-family: '#{$family}-i4', $family;
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    /* Semibold */
+
+    @if $variation == 'semibold' {
+        font-family: '#{$family}-n6', $family;
+        font-weight: 600;
+    }
+
+    @if $variation == 'semibold-italic' {
+        font-family: '#{$family}-n6', $family;
+        font-weight: 600;
+        font-style: italic;
+    }
+
+    /* Bold */
+
+    @if $variation == 'bold' {
+        font-family: '#{$family}-n7', $family;
+        font-weight: 700;
+    }
+
+    @if $variation == 'bold-italic' {
+        font-family: '#{$family}-i7', $family;
+        font-weight: 700;
+        font-style: italic;
+    }
+
+    /* Black */
+
+    @if $variation == 'black' {
+        font-family: '#{$family}-n9', $family;
+        font-weight: 900;
+    }
+
+    @if $variation == 'black-italic' {
+        font-family: '#{$family}-i9', $family;
+        font-weight: 900;
+        font-style: italic;
+    }
+
+}

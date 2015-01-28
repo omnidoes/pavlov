@@ -1,0 +1,56 @@
+
+/* 
+ * Base
+ */
+
+/* 
+ * Theme
+ */
+
+	/* Inline List
+	 * 
+	 * Looks like this;
+	 * • Alpha Item • Item 2 • Three Ducks • Four!
+	 * • Fifth Dimesion • Six Amigos
+	 * 
+	 * <ul class="list--inline">
+	 * 	<li>Item</li>
+	 * 	<li>Item</li>
+	 * 	<li>Item</li>
+	 * </ul>
+	 */
+
+		.list--inline {
+
+			margin-left: 0;
+
+			li {
+				display: inline;
+				margin-right: 5px;
+				white-space: nowrap;
+
+				&::before {
+					content: '\00B7';
+
+					position: relative;
+					bottom: -4px;
+					padding-right: 5px;
+
+					font-size: 60px;
+					@include typekit('arno-pro', 'regular');
+					line-height: 0;
+				}
+			}
+		}
+
+		.lt-ie8 {
+			.list--inline {
+				li {
+					white-space: normal;
+				}
+			}
+		}
+
+/* 
+ * Unique
+ */

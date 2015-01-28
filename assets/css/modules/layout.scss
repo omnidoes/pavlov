@@ -1,0 +1,52 @@
+/* 
+ * Low-level structural containers
+ */
+
+	html {
+		
+	}
+
+	body {
+		
+	}
+
+	* {
+		*behavior: url('#{$theme_path}/js/boxsizing.htc');
+	}
+
+	.l-wrap {
+		width: 1000px;
+		margin: 0 auto;
+	}
+
+	.front .page-header {
+		background: none;
+	}
+
+	.page-header {
+		padding-top: $half-spacing-unit;
+		background: url('#{$theme_path}/img/bg_header.jpg') no-repeat 50% top;
+
+		nav {
+			margin-top: $half-spacing-unit;
+		}
+	}
+
+	.page-title {
+		padding: $half-spacing-unit 0 $half-spacing-unit 20px;
+		margin: 0;
+	}
+
+	.page-content {
+		
+	}
+
+		.not-front .page-content {
+			padding: $base-spacing-unit 0;
+		}
+
+	.page-footer {
+		padding: $base-spacing-unit 0;
+
+		color: $plain;
+	}
