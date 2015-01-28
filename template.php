@@ -86,13 +86,6 @@
     $vars['title_attributes_array']['class'][] = 'block__title';
     $vars['content_attributes_array']['class'][] = 'block__content';
 
-    // Changing the Block module's naming convention from 
-    // 'block-[module]' to 'block--[module]' to better match the BEM syntax
-    $vars['block_html_id'] = $vars['block']->module . '--' . $vars['block']->delta;
-    foreach ($vars['classes_array'] as $key => $value) {
-      $vars['classes_array'][$key] = preg_replace('/block-/', 'block--', $vars['classes_array'][$key], 1);
-    }
-
     if($vars['block']->subject != '') {
       // Drupal 7 should use a $title variable instead of $block->subject.
       $vars['title'] = $vars['block']->subject;
