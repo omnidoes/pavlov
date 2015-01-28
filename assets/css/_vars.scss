@@ -17,6 +17,7 @@ $theme_path: '/sites/all/themes/falcor';
  * in the browser. Set to `true` or `false`.
  */
 $debug-mode:        false!default;
+$devel-mode: 		true!default;
 
 
 /**
@@ -49,13 +50,13 @@ $brand-round:        3px!default;
 /**
  * Responsiveness?
  */
-$responsive:        false!default;
+$responsive:        true!default;
 
 /**
  * Responsiveness for widescreen/high resolution desktop monitors and beyond?
  * Note: $responsive parameter above must be enabled before enabling this.
  */
-$responsive-extra:  false!default;
+$responsive-extra:  true!default;
 
 /**
  * Responsive push and pull produce a LOT of code, only turn them on if you
@@ -67,10 +68,12 @@ $responsive-pull:   false!default;
 /**
  * Tell inuit.css when breakpoints start.
  */
-$lap-start:         481px!default;
-$desk-start:        1024px!default;
-$desk-wide-start: 	1200px!default;
+$lap-start:         34em!default;
+$desk-start:        51em!default;
+$desk-wide-start: 	72em!default;
 
+$gutter-width: 		$base-line-height!default;
+$max-width: 		$desk-wide-start!default;
 
 /**
  * Font-sizes (in pixels). Refer to relevant sections for their implementations.
@@ -116,7 +119,43 @@ $close-quote:   null;
  */
 
 $white: 				#fff;
+$smoke: 		#2c2c2c;
+$charcoal: 		#090805;
 
+$green: 		#75C048;
+$lagoon: 		#295A69;
+
+$orange:		#E27F37;
+$orange-light: 	#F4C94E;
+
+$sand: 			#E0DAC6;
+$dust: 			#F8F6F5;
+
+$pink: 			#db3b5d;
+$flesh: 		#f8efcf;
+
+
+/**
+ * Tag Colors
+ */
+
+$color--anchors: 			$pink;
+
+/**
+ * Component/Layout Colors
+ */
+
+$color--region-header: 		$pink;
+$color--region-nav:       	$flesh;
+$color--region-utilities: 	$pink;
+$color--region-footer:    	#2c2c2c;
+
+/**
+ * UI Image Paths
+ */
+
+$img--bg-feathers-pink: 	"../img/bg-feathers.jpg";
+$img--bg-swirl: 			"../img/bg_swirl.jpg";
 
 /**
  * inuit.css will work these next ones out for you.

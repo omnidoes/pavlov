@@ -1,5 +1,24 @@
+
+/*
+ * Utilities
+ */
+
+	.element--invisible {
+		position: absolute !important;
+		clip: rect(1px 1px 1px 1px);
+		clip: rect(1px,1px,1px,1px);
+		overflow: hidden;
+		height: 1px;
+	}
+
+	.l-contain {
+		width: $max-width;
+		margin: 0 auto;
+	}
+
+
 /* 
- * Low-level structural containers
+ * Document
  */
 
 	html {
@@ -7,46 +26,74 @@
 	}
 
 	body {
-		
+
+		@if $devel-mode == true {
+		&::before {
+			content: 'Palm';
+
+			position: fixed;
+			left: 1em;
+			bottom: 1em;
+			display: inline-block;
+			padding: 0.5em;
+
+			border-radius: $brand-round;
+
+			background: green;
+			line-height: 1;
+
+			@include media-query(lap) {
+				content: 'Lap';
+				background: red;
+			}
+
+			@include media-query(desk) {
+				content: 'Desk';
+				background: purple;
+			}
+
+			@include media-query(desk-wide) {
+				content: 'Desk Wide';
+				background: orange;
+			}
+		}
+		}
 	}
 
 	* {
 		*behavior: url('#{$theme_path}/js/boxsizing.htc');
 	}
 
-	.l-wrap {
-		width: 1000px;
-		margin: 0 auto;
-	}
 
-	.front .page-header {
-		background: none;
-	}
+/*
+ * Page
+ */
 
 	.page-header {
-		padding-top: $half-spacing-unit;
-		background: url('#{$theme_path}/img/bg_header.jpg') no-repeat 50% top;
 
-		nav {
-			margin-top: $half-spacing-unit;
-		}
 	}
 
 	.page-title {
-		padding: $half-spacing-unit 0 $half-spacing-unit 20px;
-		margin: 0;
+
 	}
 
 	.page-content {
 		
 	}
 
-		.not-front .page-content {
-			padding: $base-spacing-unit 0;
-		}
-
 	.page-footer {
-		padding: $base-spacing-unit 0;
-
-		color: $plain;
+		background: $color--region-footer;
 	}
+
+/*
+ * Region
+ */
+
+	.region {
+
+	}
+
+	.region--header {
+		background: $color--region-header;
+	}
+

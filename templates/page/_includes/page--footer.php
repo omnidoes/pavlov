@@ -1,11 +1,4 @@
 
-<footer class="page__footer">
-	<nav>
-		<?php 
-		$main_menu = menu_tree('main-menu');
-		print drupal_render($main_menu);
-		?>
-	</nav>
-
+<footer class="page__footer" role="contentinfo">
   <?php if (!empty($page['footer'])) print render($page['footer']) ?>
 </footer>

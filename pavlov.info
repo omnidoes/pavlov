@@ -5,12 +5,11 @@ engine = phptemplate
 
 screenshot = assets/img/screenshot.png
 
-stylesheets[all][] = assets/css/style.css
+stylesheets[all][] = assets/css/style.min.css
 
-scripts[] = assets/js/plugins.js
 scripts[] = assets/js/script.js
 
 regions[header]					= Header
+regions[homepage] 				= Home Page
 regions[content]				= Content
-regions[sidebar]  				= Sidebar
 regions[footer]					= Footer

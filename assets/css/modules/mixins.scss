@@ -1,83 +1,116 @@
-
-/* 
- * Adds 'variation-specific' names in IE 6-8
- * http://help.typekit.com/customer/portal/articles/6855-using-multiple-weights-and-styles
+/*
+ * Placeholder Variables
  */
 
-@mixin typekit($family, $variation) {
+  %list--plain {
+    margin: 0;
+    list-style-type: none;
+  }
 
-    @if $family == 'tisa' {
-        $family: 'ff-tisa-web-pro';
+  %kill-last-margin {
+    & > &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  %ir {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+
+/*
+ * Mixins
+ */
+
+  /*
+   * Formats font-family in a legazy format to use Typekit with IE
+   * Also spits out font property stack
+   */
+
+    @mixin font($family, $weight: 400, $style: normal) {
+      $font-weight: $weight;
+      $font-style:  $style;
+      $fallbacks: sans-serif;
+
+      // @if ($family == 'museo-sans') {
+      //   $family: 'museo-sans';
+      //   $fallbacks: Arial, sans-serif;
+      // }
+     
+      // Translate Weight
+      @if ($weight == 100) or ($weight == thin) or ($weight == ultralight) {
+        $weight: 1;
+      }
+      @if ($weight == 200) or ($weight == extralight) {
+        $weight: 2;
+      }
+      @if ($weight == 300) or ($weight == light) {
+        $weight: 3;
+      }
+      @if ($weight == 400) or ($weight == normal) or ($weight == book) {
+        $weight: 4;
+      }
+      @if ($weight == 500) or ($weight == medium) {
+        $weight: 5;
+      }
+      @if ($weight == 600) or ($weight == semibold) or ($weight == demi) {
+        $weight: 6;
+      }
+      @if ($weight == 700) or ($weight == bold) {
+        $weight: 7;
+      }
+      @if ($weight == 800) or ($weight == extrabold) {
+        $weight: 8;
+      }
+      @if ($weight == 900) or ($weight == black) or ($weight == heavy) {
+        $weight: 9;
+      }
+     
+      // Translate Style
+      @if $style == normal {
+        $style: n;
+      }
+      @else if $style == italic {
+        $style: i;
+      }
+     
+      // Assemble $font-family
+      $primary-font:   $family + "-" + $style + $weight;
+      $secondary-font: $family;
+
+      $font-family:    "#{$primary-font}", "#{$secondary-font}", $fallbacks;
+     
+      font-family: $font-family;
+      font-style:  $font-style;
+      font-weight: $font-weight;
     }
 
-    @if $family == 'myriad' {
-        $family: 'myriad-pro';
+
+
+  /**
+   * Create a fully formed type style (sizing and vertical rhythm) by passing in a
+   * single value, e.g.:
+   * 
+     `@include font-size(10px);`
+   * 
+   * Thanks to @redclov3r for the `line-height` Sass:
+   * twitter.com/redclov3r/status/250301539321798657
+   */
+
+    @mixin font-size($font-size, $line-height: true){
+        font-size:$font-size;
+        font-size:($font-size / $base-font-size)*1rem;
+
+        @if($line-height != false) {
+          
+          @if($line-height == true) {
+            line-height:ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+          }
+          @else {
+            line-height: $line-height;
+          }
+        }
     }
 
-
-    /* Light */
-
-    @if $variation == 'light' {
-        font-family: '#{$family}-n3', $family;
-        font-weight: 300;
-    }
-
-    @if $variation == 'light-italic' {
-        font-family: '#{$family}-i3', $family;
-        font-weight: 300;
-        font-style: italic;
-    }
-
-    /* Regular */
-
-    @if $variation == 'regular' {
-        font-family: '#{$family}-n4', $family;
-        font-weight: 400;
-    }
-
-    @if $variation == 'italic' {
-        font-family: '#{$family}-i4', $family;
-        font-weight: 400;
-        font-style: italic;
-    }
-
-    /* Semibold */
-
-    @if $variation == 'semibold' {
-        font-family: '#{$family}-n6', $family;
-        font-weight: 600;
-    }
-
-    @if $variation == 'semibold-italic' {
-        font-family: '#{$family}-n6', $family;
-        font-weight: 600;
-        font-style: italic;
-    }
-
-    /* Bold */
-
-    @if $variation == 'bold' {
-        font-family: '#{$family}-n7', $family;
-        font-weight: 700;
-    }
-
-    @if $variation == 'bold-italic' {
-        font-family: '#{$family}-i7', $family;
-        font-weight: 700;
-        font-style: italic;
-    }
-
-    /* Black */
-
-    @if $variation == 'black' {
-        font-family: '#{$family}-n9', $family;
-        font-weight: 900;
-    }
-
-    @if $variation == 'black-italic' {
-        font-family: '#{$family}-i9', $family;
-        font-weight: 900;
-        font-style: italic;
-    }
-
-}

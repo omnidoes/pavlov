@@ -18,11 +18,18 @@
 @import "inuit.css/inuit";
 
 
+/*
+ * Contrib
+ */
+
+@import "contrib/bourbon/bourbon";
+
 /**
- * She’s all yours, cap’n... Begin importing your stuff here.
+ * Theme
  */
 
 @import "modules/mixins";
+
 @import "modules/text";
 @import "modules/layout";
 @import "modules/blocks";
