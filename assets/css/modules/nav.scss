@@ -1,15 +1,97 @@
-/* 
+
+/*
  * Base
  */
 
 	.nav {
+		@extend .cf;
+
+		position: relative;
+		margin-bottom: 0;
+
+		li {
+			position: relative;
+			display: block;
+			float: left;
+			margin-right: 1em;
+
+			line-height: 1;
+
+			&.active-trail {
+				
+				a {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+		nav[data-slidernav] {
+			overflow-x: auto;
+			overflow-y: hidden;
+		}
+
+	.nav--right {
+		@extend .cf;
+		
+		li {
+			float: right;
+			margin-left: $base-spacing-unit/2;
+			margin-right: 0;
+		}
+	}
+
+	.nav--dark {
+
+		a {
+			color: $white;
+		}
+	}
+
+	.nav--chubby {
+
+		a {
+			display: block;
+			padding: 4px 8px;
+		}
+	}
+
+	.nav--juicy {
+
+		a {
+			display: block;
+			padding: 1em;
+			background: transparent;
+			border-radius: 2em;
+
+			text-decoration: none;
+
+			&:hover,
+			&.active {
+				color: $white;
+				text-decoration: none;
+				background: $pink;
+			}
+		}
+	}
+
+	.nav--dropnav {
 		
 	}
 
-/* 
+/*
  * Theme
  */
 
-/* 
- * Unique
+/*
+ * Instances
  */

@@ -131,7 +131,7 @@
  */
 
   function pavlov_menu_tree__main_menu(&$vars) {
-    return '<ul class="nav">' . $vars['tree'] . '</ul>';
+    return '<ul class="nav nav--juicy">' . $vars['tree'] . '</ul>';
   }
 
   function pavlov_menu_link($vars) {

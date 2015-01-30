@@ -3,7 +3,7 @@ description = Beautiful basic theme crafted by <a href="http://omniperforms.com"
 core = 7.x
 engine = phptemplate
 
-screenshot = assets/img/screenshot.png
+screenshot = screenshot.png
 
 stylesheets[all][] = assets/css/style.min.css
 
